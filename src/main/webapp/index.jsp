@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello World: src/main/webapp/index.jsp</h2>
+<h2>This message is from Java Tomcat Webapp from Docker Image</h2>
 </body>
 </html>
