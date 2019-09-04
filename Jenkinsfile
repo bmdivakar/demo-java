@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage("Create Docker Image"){
       steps{
-        sh 'docker build -t bmdivakar/demo-java:1.0 .'
+        sh 'sudo docker build -t bmdivakar/demo-java:1.0 .'
       }
     }
     stage("Build App"){
