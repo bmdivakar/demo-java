@@ -6,7 +6,7 @@ pipeline{
         sh 'docker build -t bmdivakar/demo-java:1.0 .'
       }
     }
-    stage("Build App"){
+    stage("Build and Test"){
       agent{
         docker{
           image "bmdivakar/demo-java:1.0"
@@ -14,7 +14,8 @@ pipeline{
         }
       }
       steps{
-        sh 'mvn package'
+        sh 'mvn clean package'
+        sh 'cp ./target/demo.war /usr/local/tomcat/webapps/demo.war'
         input message:"Click proceed after testing"
       }
     }
